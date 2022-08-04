@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './CountDownCircleTimer.module.scss';
 
-interface ICountdownCircleTimerProps {
+interface ICountDownCircleTimerProps {
   time: number;
   size: number;
   stroke: string;
@@ -10,7 +10,7 @@ interface ICountdownCircleTimerProps {
   strokeLinecap?: 'butt' | 'round' | 'square' | 'inherit' | undefined;
 }
 
-const CountDownCircleTimer: React.FC<ICountdownCircleTimerProps> = ({
+const CountDownCircleTimer: React.FC<ICountDownCircleTimerProps> = ({
   time,
   size,
   stroke,
