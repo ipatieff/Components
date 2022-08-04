@@ -42,7 +42,7 @@ const CountDownCircleTimer: React.FC<ICountdownCircleTimerProps> = ({
   return (
     <div className={styles.wrapper}>
       <label className={styles.label}>{seconds}</label>
-      <div className={styles.countdownContainer}>
+      <div className={styles.countDownContainer}>
         <svg className={styles.svg} width={size} height={size}>
           <circle
             fill="none"
