@@ -10,7 +10,7 @@ interface ICountdownCircleTimerProps {
   strokeLinecap?: 'butt' | 'round' | 'square' | 'inherit' | undefined;
 }
 
-const CountdownCircleTimer: React.FC<ICountdownCircleTimerProps> = ({
+const CountDownCircleTimer: React.FC<ICountdownCircleTimerProps> = ({
   time,
   size,
   stroke,
