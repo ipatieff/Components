@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './CountdownCircleTimer.module.scss';
+import styles from './CountDownCircleTimer.module.scss';
 
 interface ICountdownCircleTimerProps {
   time: number;
@@ -61,4 +61,4 @@ const CountDownCircleTimer: React.FC<ICountdownCircleTimerProps> = ({
   );
 };
 
-export default CountdownCircleTimer;
+export default CountDownCircleTimer;
