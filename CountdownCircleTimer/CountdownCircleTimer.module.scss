@@ -1,0 +1,39 @@
+@mixin font-serif($name, $size: false, $color: false, $fontStyle: false, $lineHeight: false, $weight: false) {
+  font-family: $name, sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $fontStyle {
+    font-style: $fontStyle;
+  }
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+.svg {
+  transform: scale(-1, 1);
+  overflow: visible;
+}
+
+ .countdownContainer {
+   transform: rotate(90deg);
+ }
+
+.label {
+  position: absolute;
+  @include font-serif('ui-rounded', 16px, false, normal, 19px, 500);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
