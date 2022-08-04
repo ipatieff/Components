@@ -28,7 +28,7 @@
 
 .label {
   position: absolute;
-  @include font-serif('ui-rounded', 16px, false, normal, 19px, 500);
+  @include font-serif('Roboto', 16px, false, normal, 20px, 500);
 }
 
 .wrapper {
