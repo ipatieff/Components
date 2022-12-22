@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FC, useMemo } from 'react';
 import styles from './CountDownCircleTimer.module.scss';
 
 interface ICountDownCircleTimerProps {
@@ -18,13 +18,19 @@ const CountDownCircleTimer: React.FC<ICountDownCircleTimerProps> = ({
   strokeWidth,
   strokeLinecap = 'round',
 }) => {
-  const radius = size / 2;
+ const radius = size / 2;
   const milliseconds = time * 1000;
   const circumference = size * Math.PI;
 
   const [countdown, setCountdown] = useState(milliseconds);
-  const seconds = (countdown / 1000).toFixed();
-  const strokeDashoffset = () => circumference - (countdown / milliseconds) * circumference;
+
+  const seconds = useMemo(() => {
+    return (countdown / 1000).toFixed();
+  }, [countdown]);
+
+  const strokeDashoffset = useMemo(() => {
+    return circumference - (countdown / milliseconds) * circumference;
+  }, [circumference, countdown, milliseconds]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,12 +42,11 @@ const CountDownCircleTimer: React.FC<ICountDownCircleTimerProps> = ({
       }
     }, 10);
     return () => clearInterval(interval);
-    // eslint-disable-next-line
   }, [countdown]);
 
   return (
-    <div className={styles.wrapper}>
-      <label className={styles.label}>{seconds}</label>
+    <div className={styles.root}>
+      <label className={styles.seconds}>{seconds}</label>
       <div className={styles.countDownContainer}>
         <svg className={styles.svg} width={size} height={size}>
           <circle
@@ -53,7 +58,7 @@ const CountDownCircleTimer: React.FC<ICountDownCircleTimerProps> = ({
             strokeWidth={strokeWidth}
             strokeLinecap={strokeLinecap}
             strokeDasharray={circumference}
-            strokeDashoffset={strokeDashoffset()}
+            strokeDashoffset={strokeDashoffset}
           />
         </svg>
       </div>
