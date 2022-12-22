@@ -17,23 +17,23 @@
   }
 }
 
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.seconds {
+  position: absolute;
+  @include font-serif('Roboto', 16px, false, normal, 20px, 500);
+}
+
 .svg {
   transform: scale(-1, 1);
   overflow: visible;
 }
 
- .countDownContainer {
-   transform: rotate(90deg);
- }
-
-.label {
-  position: absolute;
-  @include font-serif('Roboto', 16px, false, normal, 20px, 500);
-}
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+.countDownContainer {
+  transform: rotate(90deg);
 }
