@@ -24,13 +24,9 @@ const CountDownCircleTimer: React.FC<ICountDownCircleTimerProps> = ({
 
   const [countdown, setCountdown] = useState(milliseconds);
 
-  const seconds = useMemo(() => {
-    return (countdown / 1000).toFixed();
-  }, [countdown]);
+  const seconds = (countdown / 1000).toFixed();
 
-  const strokeDashoffset = useMemo(() => {
-    return circumference - (countdown / milliseconds) * circumference;
-  }, [circumference, countdown, milliseconds]);
+  const strokeDashoffset = circumference - (countdown / milliseconds) * circumference;
 
   useEffect(() => {
     const interval = setInterval(() => {
